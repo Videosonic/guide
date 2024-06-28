@@ -1,0 +1,20 @@
+{
+  "name": "production-guide",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "autobuild": "vite build --watch",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.77.6",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "bulma": "^1.0.1"
+  }
+}

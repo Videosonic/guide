@@ -1,0 +1,96 @@
+@charset 'utf-8';
+
+// foundation
+@import "./00_foundation/f-variables";
+@import "./00_foundation/f-mixin";
+@import "./00_foundation/f-reset";
+@import "./00_foundation/f-base";
+
+// layout
+// @import "01_layout/l-loading";
+//@import "01_layout/l-container";
+@import "01_layout/l-header";
+//@import "01_layout/l-footer";
+//@import "01_layout/l-hero";
+//@import "01_layout/l-contact";
+//@import "01_layout/l-intro";
+//@import "01_layout/l-page";
+
+// component
+//@import "02_component/c-breadcrumb";
+@import "02_component/c-button";
+//@import "02_component/c-card";
+//@import "02_component/c-frame";
+//@import "02_component/c-link";
+//@import "02_component/c-list";
+//@import "02_component/c-pagenation";
+//@import "02_component/c-sidebar";
+//@import "02_component/c-title";
+//@import "02_component/c-table";
+//@import "02_component/c-swiper";
+
+// utility
+//@import "03_utility/u-margin";
+//@import "03_utility/u-padding";
+//@import "03_utility/u-text";
+//@import "03_utility/u-animation";
+
+/* ====================================================================================================== */
+// トップページ (p-top)
+/* ====================================================================================================== */
+.p-top-kv {
+  position: relative;
+  margin-bottom: $space-m;
+  overflow: hidden;
+  background-image: linear-gradient(
+      180deg,
+      rgba(#34fcff, 0.1) 20%,
+      rgba(255, 27, 179, 0.05) 40%,
+      rgba(#34fcff, 0.1) 70%,
+      transparent 90%
+    ),
+    radial-gradient(
+      at 10% 10%,
+      rgba(#6b97ff, 0.2) 30%,
+      rgba(#34fcff, 0.05) 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 27, 179, 0.05) 40%,
+      rgba(#34fcff, 0.1) 50%,
+      transparent 60%
+    ),
+    linear-gradient(
+      210deg,
+      rgba(255, 27, 179, 0.05) 20%,
+      rgba(#34fcff, 0.05) 30%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 30% 60%,
+      rgba(255, 27, 179, 0.05) 20%,
+      transparent 30%
+    );
+  background-blend-mode: multiply;
+
+  &_title {
+    margin-bottom: $space-s;
+
+    @include mq-up(lg) {
+      margin-bottom: $space-m;
+    }
+
+    &-ja {
+      font-size: $size-l;
+
+      @include mq-up(md) {
+        font-size: $size-xl;
+      }
+    }
+  }
+}
+
+/* =================================================== */
+// （中ブロック）
+/* =================================================== */

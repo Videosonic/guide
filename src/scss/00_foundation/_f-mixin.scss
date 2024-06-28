@@ -1,0 +1,39 @@
+/* =================================================== */
+// ファウンデーション ミックスイン
+/* =================================================== */
+$sizes: xl, lg, md, sm, xs;
+$breakpoint-up: (
+  "xs": "screen and (min-width: 390px)",
+  "sm": "screen and (min-width: 540px)",
+  "md": "screen and (min-width: 840px)",
+  "lg": "screen and (min-width: 1140px)",
+  "xl": "screen and (min-width: 1400px)",
+) !default;
+
+//メディアクエリ用mixinを定義（初期値はmd）
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+// ホバー指定用のメディアクエリ
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+
+  // Internet Explorer用の設定
+  @media all and (-ms-high-contrast: none) {
+    &:hover {
+      @content;
+    }
+  }
+}
