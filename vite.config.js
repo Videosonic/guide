@@ -17,7 +17,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'src/index.html'),
+        markup_guide: resolve(__dirname, 'src/markup-guide/index.html'),
         wp_folder: resolve(__dirname, 'src/wp-folder/index.html'),
+        css_design: resolve(__dirname, 'src/css-design/index.html'),
         //404: resolve(__dirname, 'src/404.html'),
       },
       output: {
