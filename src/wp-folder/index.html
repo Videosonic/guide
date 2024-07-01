@@ -17,7 +17,261 @@
   </head>
 
   <body>
-    <a href="../" class="button">TOPへ</a>
+    <header id="js-header" class="l-header l-header-sub-page navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="l-header_inner navbar-brand">
+        <a href="../" class="l-header_logo navbar-item">
+          <p id="js-header-logo-black" class="l-header_logo-text">制作ガイド</p>
+          <p id="js-header-logo-white" class="l-header_logo-text is-hidden">制作ガイド</p>
+        </a>
+        <button id="js-header-btn" class="l-header_btn">
+          <div class="l-header_btn-text">
+            <span class="l-header_btn-text-first">MENU</span>
+            <span class="l-header_btn-text-second">CLOSE</span>
+          </div>
+          <div id="js-header-btn-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </div>
+        </button>
+      </div>
+
+      <nav id="js-gnav" class="l-gnav hero is-fullheight">
+        <div class="l-gnav_inner">
+          <ul class="l-gnav_list">
+            <li class="l-gnav_item">
+              <a href="../markup-guide/" class="l-gnav_link">マークアップガイド</a>
+            </li>
+            <li class="l-gnav_item">
+              <a href="../wp-folder/" class="l-gnav_link">Wordpressフォルダ構成</a>
+            </li>
+            <li class="l-gnav_item">
+              <a href="../css-design/" class="l-gnav_link">CSS設計</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="l-hero container">
+        <h1 class="l-hero_title title is-1 pb-5 mb-6">Wordpress - フォルダ構成</h1>
+        <p class="subtitle is-4">ここではWordpress制作案件におけるテーマファイルのフォルダ構成を定義します</p>
+      </section>
+
+      <div class="section">
+        <div class="container">
+          <div class="columns">
+            <main class="p-sub-page_main column is-three-quarters">
+              <section class="p-sub-page_section">
+                <h2 class="p-sub-page_section-title title">■ 概要</h2>
+                <div id="js-index01" class="p-sub-page_block">
+                  <h3 class="p-sub-page_block-title title">基本のフォルダ構成</h3>
+                  <p class="p-sub-page_block-text has-text-weight-semibold">基本のフォルダ構成は下記のように定義します。</p>
+
+                  <div class="">
+                    <pre class="">
+                      <code class="language-xml">
+
+      ( ○○○○-theme )
+            │
+            ├── style.css
+            ├── screenshot.png
+            ├── functions.php
+            ├── style_admin.css
+            │
+            ├── index.php
+            ├── single.php
+            ├── archive.php
+            │
+            ├── header.php
+            ├── footer.php
+            │
+            ├── front-page.php
+            ├── page.php
+            │
+            ├── archive-△△△△.php
+            ├── single-△△△△.php
+            ├── taxonomy-△△△△.php
+            │
+            ├── sidebar.php
+            ├── 404.php
+            │
+            ├── .vscode
+            │         ├── settings.json
+            │         └── sftp.json
+            │
+            ├── include
+            │         ├── page
+            │         │         ├── □□□.php
+            │         │         ├── ○○○.php
+            │         │         ├── ×××.php
+            │         │         └── ...
+            │         │
+            │         └── parts
+            │                      ├── intro.php
+            │                      ├── post-list.php
+            │                      └── ...
+            │
+            └── lib
+                          ├── admin
+                          │         ├── login.php
+                          │         ├── init.php
+                          │         └── ...
+                          │
+                          ├── css
+                          │         ├── site.min.css
+                          │         └── ...
+                          │
+                          ├── functions
+                          │         ├── asset.php
+                          │         ├── head.php
+                          │         ├── setting.php
+                          │         └── ...
+                          │
+                          ├── img
+                          │         ├── logo
+                          │         │           ├── logo.svg
+                          │         │           ├── logo-w.svg
+                          │         │           ├── logo-vertival.svg
+                          │         │           └── ...
+                          │         │
+                          │         ├── favicon
+                          │         │           ├── apple-touch-icon.png
+                          │         │           ├── favicon.ico
+                          │         │           ├── icon-192.png
+                          │         │           ├── icon-512.png
+                          │         │           ├── icon.svg
+                          │         │           ├── manifest.webmanifest
+                          │         │           └── ...
+                          │         │
+                          │         ├── ○○○.jpg
+                          │         ├── △△△.png
+                          │         ├── ×××.svg
+                          │         └── ...
+                          │
+                          ├── js
+                          │         ├── app.js
+                          │         └── ...
+                          │
+                          └── scss
+                                        ├── 00_foundation
+                                        │          ├── _f-base.scss
+                                        │          ├── _f-mixin.scss
+                                        │          ├── _f-reset.scss
+                                        │          └── _f-variables.scss
+                                        │
+                                        ├── 01_layout
+                                        │          ├── _l-container.scss
+                                        │          ├── _l-footer.scss
+                                        │          ├── _l-header.scss
+                                        │          ├── _l-hero.scss
+                                        │          └── ...
+                                        │
+                                        ├── 02_component
+                                        │          ├── _c-breadcrumb.scss
+                                        │          ├── _c-button.scss
+                                        │          ├── _c-card.scss
+                                        │          ├── _c-list.scss
+                                        │          ├── _c-pagination.scss
+                                        │          ├── _c-sidebar.scss
+                                        │          ├── _c-table.scss
+                                        │          ├── _c-title.scss
+                                        │          └── ...
+                                        │
+                                        ├── 03_utility
+                                        │          ├── _u-margin.scss
+                                        │          ├── _u-padding.scss
+                                        │          ├── _u-text.scss
+                                        │          └── ...
+                                        │
+                                        ├── 04_project
+                                        │          ├── _p-top.scss
+                                        │          ├── _p-news.scss
+                                        │          └── ...
+                                        │
+                                        └── site.scss
+
+                      </code>
+                    </pre>
+                  </div>
+                  <p class="p-sub-page_block-text has-text-weight-semibold">
+                    以降、上から順に区切って解説します
+                  </p>
+                </div>
+              </section>
+
+              <section class="p-sub-page_section">
+                <h2 class="p-sub-page_section-title title">■ テーマ直下のファイル</h2>
+                <div id="js-index02"  class="p-sub-page_block">
+                  <h3 class="p-sub-page_block-title title">テーマ名、基本設定のファイル群</h3>
+                  <p class="p-sub-page_block-text has-text-weight-semibold">この部分はテーマの基本情報を設定するファイル群です。</p>
+
+                  <div class="">
+                    <pre class="">
+                      <code class="language-xml">
+
+                        ( ○○○○-theme )                  ・・・ a
+                              │
+                              ├── style.css                  ・・・ b
+                              ├── screenshot.png     ・・・ c
+                              ├── functions.php        ・・・ d
+                              ├── style_admin.css    ・・・ e
+                              │
+                              ・
+                              ・
+                              ・
+                  
+                      </code>
+                    </pre>
+                  </div>
+                  <ul class="p-sub-page_description-list">
+                    <li class="p-sub-page_description-item">大元のテーマ名を設定します。<br>〇〇〇〇の部分にはサイト名やクライアント名を入れます。<br>すべて小文字で記述します。</li>
+                    <li class="p-sub-page_description-item">テーマファイルの初期設定をおこないます。<br>サイト名やURI、Description、Authorなどの基本情報を入力します。<br>必須ファイルです。</li>
+                    <li class="p-sub-page_description-item">テーマのサムネイル画像となります。<br>管理画面→「外観」でテーマファイルを選択する画面で表示されます。</li>
+                    <li class="p-sub-page_description-item">テーマの機能に関する設定をおこないます。<br>通常はここに直書きしますが、のちほど説明する<span class="p-sub-page_tag tag is-link is-light">lib/functions</span>のフォルダ内に機能ごとに分割したphpファイルを置き、このファイル自体は分割された各phpファイルを読み込むハブのような機能のみを担います。</li>
+                    <li class="p-sub-page_description-item">管理画面の設定に関するファイルです。</li>
+                  </ul>
+                  <p class="p-sub-page_block-text has-text-weight-semibold">
+                    上記のうち<span class="p-sub-page_tag tag is-link is-light">style.css</span>は必須ですが、この他に次項で説明する<span class="p-sub-page_tag tag is-link is-light">index.php</span>もテーマに必須のファイルです。
+                  </p>
+                </div>
+              </section>
+            </main>
+            <aside class="p-sub-page_sidebar column has-background-light">
+              <div class="menu">
+                <ul class="p-sub-page_sidebar-list menu-list">
+                  <li class="p-sub-page_sidebar-item">
+                    <p class="menu-label is-size-4 has-text-dark">概要</p>
+                    <ul class="p-sub-page_sidebar-list-lower-level">
+                      <li class="p-sub-page_sidebar-item-lower-level is-size-5 has-text-grey">
+                        <a href="#js-index01" class="p-sub-page_sidebar-link">基本のフォルダ構成</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="p-sub-page_sidebar-item">
+                    <p class="menu-label is-size-4 has-text-dark">テーマ直下のファイル</p>
+                    <ul class="p-sub-page_sidebar-list-lower-level">
+                      <li class="p-sub-page_sidebar-item-lower-level is-size-5 has-text-grey">
+                        <a href="#js-index02" class="p-sub-page_sidebar-link">テーマ名、基本設定のファイル群</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div>フッターです</div>
+    </footer>
+
     <script type="module" src="../js/main.ts"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
   </body>
 </html>
