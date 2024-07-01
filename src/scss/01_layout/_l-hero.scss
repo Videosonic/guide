@@ -1,0 +1,18 @@
+/* =================================================== */
+// レイアウト - ヒーロー
+/* =================================================== */
+.l-hero {
+  position: relative;
+  padding: $space-xl 0;
+
+  @include mq-up(lg) {
+    padding: 200px 0;
+  }
+
+  &_title {
+    display: inline-block;
+    padding-right: length(2);
+    padding-left: length(2);
+    border-bottom: 3px solid $gray;
+  }
+}
